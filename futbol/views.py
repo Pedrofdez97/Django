@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 # Create your views here.
-from futbol.models import Futbolista
+from .models import *
 
 
 def inicio(request):
     lista_futbolista = Futbolista.objects.all()
-
     return render(request, 'index.html', {'juga': lista_futbolista})
+
+
 def equipo(request):
     return render(request, 'equipo.html')
 def crearJugador(request):
@@ -19,6 +20,8 @@ def crearJugador(request):
         jugador.nombre = request.POST.get('nombre')
         jugador.equipo = request.POST.get('equipo')
         jugador.fecha_nacimiento = request.POST.get('fecha_nacimiento')
+        jugador.fecha_debut = request.POST.get('fecha_debut')
+        jugador.equipo_debut = request.POST.get('equipo_debut')
         Futbolista.save(jugador)
         return redirect('/futbol/index/')
     else:

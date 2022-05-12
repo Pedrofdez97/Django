@@ -39,7 +39,42 @@
     </div>
   </div>
 </nav>
-<img src="{% static 'futbol/futbol/image/fondofutbol.jpg' %}"/>
+<br>
+<br>
+<div class="row g-0">
+              <div class="col-md-4 m-2">
+                <img src="{% static 'futbol/futbol/image/fondofutbol.jpg' %}" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                     <h2 class="card-title" style="text-align: center">Futbolistas</h2>
+<table class="table table-dark table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Equipo</th>
+      <th scope="col">Detalle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for j in juga %}
+
+            <tr>
+                <th>{{ j.id }}</th>
+                <td>{{ j.nombre }}</td>
+                <td>{{ j.equipo }}</td>
+                <td><a href="/futbol/jugadores/{{ j.id }}">Detalle Jugador</a></td>
+            </tr>
+
+        {% endfor %}
+    </tr>
+  </tbody>
+</table>
+
+                </div>
+              </div>
+</div>
 
 </body>
 </html>

@@ -40,17 +40,18 @@
   </div>
 </nav>
 
-        <ul>{% for serie in series %}
+
             <tr>
                 <td>{{forloop.counter}}</td>
                 <td>{{ jug.id }}</td>
                 <td>{{ jug.nombre }}</td>
                 <td>{{ jug.equipo }}</td>
                 <td>{{ jug.fecha_nacimiento}}</td>
+                <td>{{ jug.fecha_debut }}</td>
+                <td>{{ jug.equipo_debut }}</td>
                 <td><a href="http://127.0.0.1:8000/futbol/borrar/{{ jug.id }}" class="btn btn-success">Eliminar</a></td>
                 <td><a href="http://127.0.0.1:8000/futbol/modificar/{{ jug.id }}" class="btn btn-danger">Modificar</a></td>
             </tr>
-            {% endfor %}
 
 </ul>
 
