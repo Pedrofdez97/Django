@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{# Cargamos la librería #}
+	  {% load bootstrap4 %}
+
+	  {# CSS Bootstrap #}
+	  {% bootstrap_css %}
+
+	  {% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Fútbol Champions</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/futbol/index/">Inicio</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="http://127.0.0.1:8000/futbol/crearjugador/">Crear Jugadores</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<form action="" method="POST">
+
+    {% csrf_token %}
+<div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header p-5 pb-4 border-bottom-0">
+        <!-- <h5 class="modal-title">Modal title</h5> -->
+        <h2 class="fw-bold mb-0">Modificar Jugador: {{ j.nombre }}</h2>
+      </div>
+      <div class="modal-body p-5 pt-0">
+        <form class="">
+          <div class="form-floating mb-3">
+              <label for="id">ID:</label>
+            <input type="number" class="form-control rounded-3" id="id" name="id" value="{{ j.id }}" readonly required >
+          </div>
+
+          <div class="form-floating mb-3">
+              <label for="nombre"> Nombre: </label>
+            <input type="text" class="form-control rounded-3" id="nombre" name="nombre" value="{{ j.nombre }}">
+          </div>
+
+            <div class="form-floating mb-3">
+                <label for="equipo"> Equipo: </label>
+            <input type="text" class="form-control rounded-3" id="equipo" name="equipo" value="{{ j.equipo }}">
+          </div>
+
+            <div class="form-floating mb-3">
+                              <label for="fecha_nacimiento"> Fecha Nacimiento: </label>
+            <input type="date" class="form-control rounded-3" id="fecha_nacimiento" name="fecha_nacimiento" value="{{ j.fecha_nacimiento }}">
+          </div>
+            <div class="form-floating mb-3">
+                              <label for="fecha_debut"> Fecha Debut: </label>
+            <input type="date" class="form-control rounded-3" id="fecha_debut" name="fecha_debut" value="{{ j.fecha_debut }}">
+          </div>
+
+            <div class="form-floating mb-3">
+                <label for="equipo_debut"> Equipo Debut: </label>
+            <input type="text" class="form-control rounded-3" id="equipo_debut" name="equipo_debut" value="{{ j.equipo_debut }}">
+          </div>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" value="Modificar">Modificar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+</body>
+</html>

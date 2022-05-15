@@ -23,36 +23,39 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/futbol/index/">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/futbol/equipo/">Equipo</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/futbol/jugadores/">Jugadores</a>
-        </li>
           <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/futbol/crearjugador/">Crear Jugadores</a>
         </li>
-          <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/futbol/crearequipo/">Crear Equipo</a>
-        </li>
+
       </ul>
     </div>
   </div>
 </nav>
 
-            <tr>
-                <td>{{forloop.counter}}</td>
-                <td>{{ jug.id }}</td>
-                <td>{{ jug.nombre }}</td>
-                <td>{{ jug.equipo }}</td>
-                <td>{{ jug.fecha_nacimiento}}</td>
-                <td>{{ jug.fecha_debut }}</td>
-                <td>{{ jug.equipo_debut }}</td>
-                <td><a href="http://127.0.0.1:8000/futbol/borrar/{{ jug.id }}" class="btn btn-success">Eliminar</a></td>
-                <td><a href="http://127.0.0.1:8000/futbol/modificar/{{ jug.id }}" class="btn btn-danger">Modificar</a></td>
-            </tr>
 
-</ul>
+
+
+
+<div class="card text-center">
+      <div class="card-body">
+
+    <h5 class="card-title">Jugador</h5>
+        <tr>
+            <td>{{forloop.counter}}</td>
+                <p class="card-text">ID: {{ jug.id }}</p>
+                <p class="card-text">NOMBRE: {{ jug.nombre }}</p>
+                <p class="card-text">EQUIPO ACTUAL: {{ jug.equipo }}</p>
+                <p class="card-text">FECHA NACIMIENTO: {{ jug.fecha_nacimiento }}</p>
+                <p class="card-text">FECHA DEBUT: {{ jug.fecha_debut }}</p>
+                <p class="card-text">EQUIPO DEBUT: {{ jug.equipo_debut }}</p>
+            </tr>
+    <td><a href="http://127.0.0.1:8000/futbol/eliminar/{{ jug.id }}" class="btn btn-primary">Eliminar</a></td>
+      <td><a href="http://127.0.0.1:8000/futbol/modificar/{{ jug.id }}" class="btn btn-danger">Modificar</a></td>
+  </div>
+</div>
+
+
+
 
 
 
